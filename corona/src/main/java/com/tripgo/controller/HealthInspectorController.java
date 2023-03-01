@@ -20,7 +20,7 @@ public class HealthInspectorController {
 	public String getHealthInspectors(@PathVariable("district") String district)
 			throws FileNotFoundException, IOException {
 		Properties props = new Properties();
-		props.load(new FileInputStream(new File(configLocation + "district-healthinspectors.properties")));
+		props.load(new FileInputStream(new File(configLocation + "/" + "district-healthinspectors.properties")));
 
 		String inspectorName = props.getProperty(district);
 		String response = "{district:\"" + district + "\", inspector:\"" + inspectorName + "\"}";
